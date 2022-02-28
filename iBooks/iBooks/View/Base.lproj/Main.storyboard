@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Dd-bF-wE0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iBooks-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoe-zY-CdC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Title of Book" translatesAutoresizingMaskIntoConstraints="NO" id="wWp-Sn-LSd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-hK-DT6">
+                                        <rect key="frame" x="10" y="61" width="394" height="40"/>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-fA-ZTp">
+                                        <rect key="frame" x="0.0" y="101" width="414" height="673"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="673" id="jDP-Fi-aEw"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wWp-Sn-LSd" firstAttribute="top" secondItem="Yoe-zY-CdC" secondAttribute="top" id="1fi-tW-jyP"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Nx-hK-DT6" secondAttribute="trailing" constant="10" id="5mi-Yu-ab3"/>
+                                    <constraint firstAttribute="bottom" secondItem="rFF-fA-ZTp" secondAttribute="bottom" id="DHr-ue-y95"/>
+                                    <constraint firstAttribute="trailing" secondItem="rFF-fA-ZTp" secondAttribute="trailing" id="Gbd-wj-B7H"/>
+                                    <constraint firstItem="2Nx-hK-DT6" firstAttribute="top" secondItem="wWp-Sn-LSd" secondAttribute="bottom" constant="10" id="Qz1-ZR-Uuz"/>
+                                    <constraint firstItem="2Nx-hK-DT6" firstAttribute="bottom" secondItem="rFF-fA-ZTp" secondAttribute="top" id="Z1w-zJ-Mwk"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWp-Sn-LSd" secondAttribute="trailing" id="axF-e6-ZZ4"/>
+                                    <constraint firstItem="wWp-Sn-LSd" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" id="b7m-Rz-UYm"/>
+                                    <constraint firstItem="2Nx-hK-DT6" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" constant="10" id="ha7-4S-ksY"/>
+                                    <constraint firstItem="rFF-fA-ZTp" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" id="jA4-QO-VJe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yoe-zY-CdC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5IJ-t6-sbe"/>
+                            <constraint firstItem="Yoe-zY-CdC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BqE-5J-7ZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yoe-zY-CdC" secondAttribute="trailing" id="L65-lA-bSO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yoe-zY-CdC" secondAttribute="bottom" id="gGd-ZS-V6a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="iBooks" id="c8Z-6h-XkO"/>
+                    <connections>
+                        <outlet property="listTableView" destination="rFF-fA-ZTp" id="TAO-4I-7Eg"/>
+                        <outlet property="preRequisiteStackView" destination="2Nx-hK-DT6" id="0py-PA-iBu"/>
+                        <outlet property="searchBar" destination="wWp-Sn-LSd" id="vAG-ZH-7RR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="98V-OS-AXN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Dd-bF-wE0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q27-bE-GdC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8r3-RP-W2d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAT-59-7jy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

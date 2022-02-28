@@ -17,6 +17,8 @@
 		43D4BD8B27CCF56900834B0C /* iBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BD8A27CCF56900834B0C /* iBooksTests.swift */; };
 		43D4BD9527CCF56900834B0C /* iBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BD9427CCF56900834B0C /* iBooksUITests.swift */; };
 		43D4BD9727CCF56900834B0C /* iBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BD9627CCF56900834B0C /* iBooksUITestsLaunchTests.swift */; };
+		43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */; };
+		43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA827CD117F00834B0C /* PreRequisites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		43D4BD9027CCF56900834B0C /* iBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D4BD9427CCF56900834B0C /* iBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBooksUITests.swift; sourceTree = "<group>"; };
 		43D4BD9627CCF56900834B0C /* iBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ Extension.swift"; sourceTree = "<group>"; };
+		43D4BDA827CD117F00834B0C /* PreRequisites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreRequisites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,15 @@
 		43D4BD6F27CCF56700834B0C /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				43D4BDA327CCFCBB00834B0C /* View */,
 				43D4BD7027CCF56700834B0C /* AppDelegate.swift */,
 				43D4BD7227CCF56700834B0C /* SceneDelegate.swift */,
-				43D4BD7427CCF56700834B0C /* ViewController.swift */,
-				43D4BD7627CCF56700834B0C /* Main.storyboard */,
 				43D4BD7C27CCF56900834B0C /* Assets.xcassets */,
 				43D4BD7E27CCF56900834B0C /* LaunchScreen.storyboard */,
 				43D4BD8127CCF56900834B0C /* Info.plist */,
 				43D4BD7927CCF56700834B0C /* iBooks.xcdatamodeld */,
+				43D4BDA727CD10FD00834B0C /* Helper */,
+				43D4BDA427CD0DE700834B0C /* Extension */,
 			);
 			path = iBooks;
 			sourceTree = "<group>";
@@ -128,6 +133,31 @@
 				43D4BD9627CCF56900834B0C /* iBooksUITestsLaunchTests.swift */,
 			);
 			path = iBooksUITests;
+			sourceTree = "<group>";
+		};
+		43D4BDA327CCFCBB00834B0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BD7427CCF56700834B0C /* ViewController.swift */,
+				43D4BD7627CCF56700834B0C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43D4BDA427CD0DE700834B0C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		43D4BDA727CD10FD00834B0C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDA827CD117F00834B0C /* PreRequisites.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +294,8 @@
 				43D4BD7527CCF56700834B0C /* ViewController.swift in Sources */,
 				43D4BD7127CCF56700834B0C /* AppDelegate.swift in Sources */,
 				43D4BD7B27CCF56700834B0C /* iBooks.xcdatamodeld in Sources */,
+				43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */,
+				43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */,
 				43D4BD7327CCF56700834B0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

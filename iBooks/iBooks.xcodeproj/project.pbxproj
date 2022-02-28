@@ -19,6 +19,7 @@
 		43D4BD9727CCF56900834B0C /* iBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BD9627CCF56900834B0C /* iBooksUITestsLaunchTests.swift */; };
 		43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */; };
 		43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA827CD117F00834B0C /* PreRequisites.swift */; };
+		43D4BDAB27CD1E7800834B0C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		43D4BD9627CCF56900834B0C /* iBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ Extension.swift"; sourceTree = "<group>"; };
 		43D4BDA827CD117F00834B0C /* PreRequisites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreRequisites.swift; sourceTree = "<group>"; };
+		43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				43D4BDA827CD117F00834B0C /* PreRequisites.swift */,
+				43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */,
 				43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */,
 				43D4BD7327CCF56700834B0C /* SceneDelegate.swift in Sources */,
+				43D4BDAB27CD1E7800834B0C /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

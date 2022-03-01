@@ -10,8 +10,7 @@ import UIKit
 protocol IBookViewProtocol: AnyObject {
     
     // PRESENTER -> VIEW
-    
-    var presenter: IBookPresenterProtocol? {get set}
+    var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol {get set}
     func showListofAudioBooks()
 }
 

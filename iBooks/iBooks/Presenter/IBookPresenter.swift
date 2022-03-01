@@ -6,3 +6,44 @@
 //
 
 import Foundation
+
+//MARK: - Class
+class IBookPresenter: IBookPresenterProtocol {
+    
+    //MARK: - Variables
+    var interactor: IBookInputInteractorProtocol?
+    weak var view: IBookViewProtocol?
+    var router: IBookRouterProtocol?
+    var audioBooks: [iBook]?
+    var filteredBooks: [iBook]?
+    
+    //MARK: - Presenter Functions
+    func viewDidLoad() {
+        // Do Nothing
+    }
+    
+    func searchForAudioBook(with term: String) {
+        // Communicate with Interactor to get the data
+    }
+    
+    func configureView(viewRef: ViewController) {
+        
+        viewRef.presenter.view = viewRef
+        //   viewRef.presenter.router = IBookRouter()
+        viewRef.presenter.interactor = IBookInteractor()
+        viewRef.presenter.interactor?.presenter = viewRef.presenter
+        
+    }
+    
+    
+}
+
+//MARK: - Extension
+extension IBookPresenter: IBookOutputInteractorProtocol {
+    
+    func IBookListDidFetch(AudioBookList: [iBook]) {
+        /// Fetch Function
+    }
+    
+    
+}

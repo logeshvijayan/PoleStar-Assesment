@@ -9,11 +9,21 @@
 import UIKit
 
 //MARK: -  Class
-class ViewController: UIViewController {
+class ViewController: UIViewController,IBookViewProtocol {
+    
+    var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol = IBookPresenter()
+    
+    func showListofAudioBooks() {
+        preRequisiteStackView.isHidden = true
+        listTableView.reloadData()
+    }
+    
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.configureView(viewRef: self)
+        presenter.viewDidLoad()
         configureStackView()
     }
 

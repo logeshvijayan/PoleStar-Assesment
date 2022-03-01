@@ -64,7 +64,8 @@ class iBooksAPI {
     func search(term: String) -> AnyPublisher<[iBook], Error> {
 
         // 1. Configure URL
-        guard let percentEncoded = term.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+        let updatedSearchterm = term + "&limit=10"
+        guard let percentEncoded = updatedSearchterm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return iBookAPIError.failedToEncodeQueryParams.asPublisher()
         }
         guard let url =  urlForService(.title, additionalParts: percentEncoded)  else {

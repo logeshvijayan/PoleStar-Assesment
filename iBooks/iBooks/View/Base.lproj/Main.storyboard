@@ -25,27 +25,34 @@
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-hK-DT6">
                                         <rect key="frame" x="10" y="61" width="394" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="40" id="HM2-pm-1nE"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-fA-ZTp">
                                         <rect key="frame" x="0.0" y="101" width="414" height="673"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="250" constant="673" id="jDP-Fi-aEw"/>
-                                        </constraints>
                                     </tableView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="LBf-Ng-Fha">
+                                        <rect key="frame" x="0.0" y="365" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="wWp-Sn-LSd" firstAttribute="top" secondItem="Yoe-zY-CdC" secondAttribute="top" id="1fi-tW-jyP"/>
                                     <constraint firstAttribute="trailing" secondItem="2Nx-hK-DT6" secondAttribute="trailing" constant="10" id="5mi-Yu-ab3"/>
+                                    <constraint firstItem="LBf-Ng-Fha" firstAttribute="leading" secondItem="rFF-fA-ZTp" secondAttribute="leading" id="6I6-G4-N6y"/>
                                     <constraint firstAttribute="bottom" secondItem="rFF-fA-ZTp" secondAttribute="bottom" id="DHr-ue-y95"/>
                                     <constraint firstAttribute="trailing" secondItem="rFF-fA-ZTp" secondAttribute="trailing" id="Gbd-wj-B7H"/>
                                     <constraint firstItem="2Nx-hK-DT6" firstAttribute="top" secondItem="wWp-Sn-LSd" secondAttribute="bottom" constant="10" id="Qz1-ZR-Uuz"/>
                                     <constraint firstItem="2Nx-hK-DT6" firstAttribute="bottom" secondItem="rFF-fA-ZTp" secondAttribute="top" id="Z1w-zJ-Mwk"/>
                                     <constraint firstAttribute="trailing" secondItem="wWp-Sn-LSd" secondAttribute="trailing" id="axF-e6-ZZ4"/>
                                     <constraint firstItem="wWp-Sn-LSd" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" id="b7m-Rz-UYm"/>
+                                    <constraint firstItem="LBf-Ng-Fha" firstAttribute="centerX" secondItem="rFF-fA-ZTp" secondAttribute="centerX" id="frs-Qn-6CX"/>
                                     <constraint firstItem="2Nx-hK-DT6" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" constant="10" id="ha7-4S-ksY"/>
                                     <constraint firstItem="rFF-fA-ZTp" firstAttribute="leading" secondItem="Yoe-zY-CdC" secondAttribute="leading" id="jA4-QO-VJe"/>
+                                    <constraint firstItem="LBf-Ng-Fha" firstAttribute="trailing" secondItem="rFF-fA-ZTp" secondAttribute="trailing" id="wdm-g0-VXo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -60,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="iBooks" id="c8Z-6h-XkO"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="LBf-Ng-Fha" id="E6m-fb-WzW"/>
                         <outlet property="listTableView" destination="rFF-fA-ZTp" id="TAO-4I-7Eg"/>
                         <outlet property="preRequisiteStackView" destination="2Nx-hK-DT6" id="0py-PA-iBu"/>
                         <outlet property="searchBar" destination="wWp-Sn-LSd" id="vAG-ZH-7RR"/>

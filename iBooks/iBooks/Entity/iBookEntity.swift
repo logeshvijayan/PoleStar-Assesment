@@ -16,11 +16,13 @@ struct iBook: Codable {
     let title: String
     let suggestedTitle: String
     let publishedYear: Int?
+    let authorName: [String]?
     
     enum CodingKeys: String, CodingKey {
         case key,type,seed,title
         case suggestedTitle = "title_suggest"
         case publishedYear = "first_publish_year"
+        case authorName = "author_name"
     }
 }
 

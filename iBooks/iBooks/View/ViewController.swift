@@ -12,30 +12,21 @@ import UIKit
 class ViewController: UIViewController,IBookViewProtocol {
     
     var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol = IBookPresenter()
-    
-    func showListofIBooks() {
-        DispatchQueue.main.async {
-            self.preRequisiteStackView.isHidden = true
-            NSLayoutConstraint.activate([
-                self.preRequisiteStackView.heightAnchor.constraint(equalToConstant: 0),
-            ])
-            self.listTableView.reloadData()
-        }
-    }
-    
-
+        
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
         presenter.configureView(viewRef: self)
         configureStackView()
+        activityIndicatorView.hidesWhenStopped = true
     }
 
     //MARK: - Outlets and Variables
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var preRequisiteStackView: UIStackView!
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     //MARK: - View Functions
     func configureStackView() {
@@ -46,7 +37,19 @@ class ViewController: UIViewController,IBookViewProtocol {
     
     func registerTableView() {
         listTableView.dataSource = self
+        searchBar.delegate = self
         listTableView.register(UINib(nibName: "BookListTableViewCell", bundle: nil), forCellReuseIdentifier: "BookListTableViewCell")
+    }
+    
+    func showListofIBooks() {
+        DispatchQueue.main.async {
+            self.preRequisiteStackView.isHidden = true
+            NSLayoutConstraint.activate([
+                self.preRequisiteStackView.heightAnchor.constraint(equalToConstant: 0),
+            ])
+            self.activityIndicatorView.stopAnimating()
+            self.listTableView.reloadData()
+        }
     }
 }
 
@@ -70,7 +73,19 @@ extension ViewController: UITableViewDataSource {
         cell.setupCell(with: iBook)
         return cell
     }
+}
+
+extension ViewController: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter.searchForIBook(with: searchBar.text!)
+        activityIndicatorView.startAnimating()
+        searchBar.endEditing(true)
+        
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.endEditing(true)
+    }
 }
 

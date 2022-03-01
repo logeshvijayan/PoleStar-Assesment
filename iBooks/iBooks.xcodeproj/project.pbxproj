@@ -20,6 +20,12 @@
 		43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */; };
 		43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDA827CD117F00834B0C /* PreRequisites.swift */; };
 		43D4BDAB27CD1E7800834B0C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */; };
+		43D4BDAE27CD4D5F00834B0C /* iBooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDAD27CD4D5F00834B0C /* iBooksAPI.swift */; };
+		43D4BDB127CD502200834B0C /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D4BDB027CD502200834B0C /* Config.plist */; };
+		43D4BDB327CDBE1A00834B0C /* iBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB227CDBE1A00834B0C /* iBookEntity.swift */; };
+		43D4BDB527CDBF3800834B0C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB427CDBF3800834B0C /* Bundle+Extension.swift */; };
+		43D4BDB727CDC6F500834B0C /* iBookAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB627CDC6F400834B0C /* iBookAPIError.swift */; };
+		43D4BDB927CDC75700834B0C /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB827CDC75700834B0C /* Error+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ Extension.swift"; sourceTree = "<group>"; };
 		43D4BDA827CD117F00834B0C /* PreRequisites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreRequisites.swift; sourceTree = "<group>"; };
 		43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		43D4BDAD27CD4D5F00834B0C /* iBooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBooksAPI.swift; sourceTree = "<group>"; };
+		43D4BDB027CD502200834B0C /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		43D4BDB227CDBE1A00834B0C /* iBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBookEntity.swift; sourceTree = "<group>"; };
+		43D4BDB427CDBF3800834B0C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		43D4BDB627CDC6F400834B0C /* iBookAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBookAPIError.swift; sourceTree = "<group>"; };
+		43D4BDB827CDC75700834B0C /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 		43D4BD6F27CCF56700834B0C /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				43D4BDAF27CD4FB100834B0C /* Entity */,
 				43D4BDA327CCFCBB00834B0C /* View */,
 				43D4BD7027CCF56700834B0C /* AppDelegate.swift */,
 				43D4BD7227CCF56700834B0C /* SceneDelegate.swift */,
@@ -116,6 +129,8 @@
 				43D4BD7927CCF56700834B0C /* iBooks.xcdatamodeld */,
 				43D4BDA727CD10FD00834B0C /* Helper */,
 				43D4BDA427CD0DE700834B0C /* Extension */,
+				43D4BDAC27CD4D1E00834B0C /* Network Layer */,
+				43D4BDB027CD502200834B0C /* Config.plist */,
 			);
 			path = iBooks;
 			sourceTree = "<group>";
@@ -150,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				43D4BDA527CD0E1800834B0C /* UILabel+ Extension.swift */,
+				43D4BDB427CDBF3800834B0C /* Bundle+Extension.swift */,
+				43D4BDB827CDC75700834B0C /* Error+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,6 +178,23 @@
 				43D4BDAA27CD1E7800834B0C /* NetworkMonitor.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		43D4BDAC27CD4D1E00834B0C /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDAD27CD4D5F00834B0C /* iBooksAPI.swift */,
+				43D4BDB627CDC6F400834B0C /* iBookAPIError.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		43D4BDAF27CD4FB100834B0C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDB227CDBE1A00834B0C /* iBookEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D4BDB127CD502200834B0C /* Config.plist in Resources */,
 				43D4BD8027CCF56900834B0C /* LaunchScreen.storyboard in Resources */,
 				43D4BD7D27CCF56900834B0C /* Assets.xcassets in Resources */,
 				43D4BD7827CCF56700834B0C /* Main.storyboard in Resources */,
@@ -295,11 +330,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D4BD7527CCF56700834B0C /* ViewController.swift in Sources */,
+				43D4BDB527CDBF3800834B0C /* Bundle+Extension.swift in Sources */,
 				43D4BD7127CCF56700834B0C /* AppDelegate.swift in Sources */,
 				43D4BD7B27CCF56700834B0C /* iBooks.xcdatamodeld in Sources */,
+				43D4BDAE27CD4D5F00834B0C /* iBooksAPI.swift in Sources */,
+				43D4BDB327CDBE1A00834B0C /* iBookEntity.swift in Sources */,
 				43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */,
+				43D4BDB727CDC6F500834B0C /* iBookAPIError.swift in Sources */,
 				43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */,
 				43D4BD7327CCF56700834B0C /* SceneDelegate.swift in Sources */,
+				43D4BDB927CDC75700834B0C /* Error+Extension.swift in Sources */,
 				43D4BDAB27CD1E7800834B0C /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

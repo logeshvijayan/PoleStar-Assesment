@@ -23,7 +23,7 @@ class IBookPresenter: IBookPresenterProtocol {
     }
     
     func searchForIBook(with term: String) {
-        // Communicate with Interactor to get the data
+        interactor?.fetchSpecificiBookStarts(with: term)
     }
     
     func configureView(viewRef: ViewController) {
@@ -42,7 +42,8 @@ class IBookPresenter: IBookPresenterProtocol {
 extension IBookPresenter: IBookOutputInteractorProtocol {
     
     func IBookListDidFetch(iBookList: [iBook]) {
-        /// Fetch Function
+        iBooks = iBookList
+        view?.showListofIBooks()
     }
     
     

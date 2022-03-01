@@ -25,13 +25,13 @@
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-hK-DT6">
                                         <rect key="frame" x="10" y="61" width="394" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="40" id="HM2-pm-1nE"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-fA-ZTp">
                                         <rect key="frame" x="0.0" y="101" width="414" height="673"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="250" constant="673" id="jDP-Fi-aEw"/>
-                                        </constraints>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

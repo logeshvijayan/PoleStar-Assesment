@@ -37,7 +37,7 @@ func fetchSpecificiBookStarts(with term: String) {
 
 extension IBookInteractor: IBookOutputInteractorProtocol {
     func IBookListDidFetch(iBookList: [iBook]) {
-        /// Once the fetch is sucessfull
+        presenter?.IBookListDidFetch(iBookList: iBookList)
     }
     
     

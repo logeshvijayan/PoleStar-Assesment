@@ -14,16 +14,21 @@ class ViewController: UIViewController,IBookViewProtocol {
     var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol = IBookPresenter()
     
     func showListofIBooks() {
-        preRequisiteStackView.isHidden = true
-        listTableView.reloadData()
+        DispatchQueue.main.async {
+            self.preRequisiteStackView.isHidden = true
+            NSLayoutConstraint.activate([
+                self.preRequisiteStackView.heightAnchor.constraint(equalToConstant: 0),
+            ])
+            self.listTableView.reloadData()
+        }
     }
     
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerTableView()
         presenter.configureView(viewRef: self)
-        presenter.viewDidLoad()
         configureStackView()
     }
 
@@ -38,5 +43,34 @@ class ViewController: UIViewController,IBookViewProtocol {
            preRequisiteStackView.addArrangedSubview(UILabel.createLabel(prefixText: "•", text: description.preRequisiteDescription))
         }
     }
+    
+    func registerTableView() {
+        listTableView.dataSource = self
+        listTableView.register(UINib(nibName: "BookListTableViewCell", bundle: nil), forCellReuseIdentifier: "BookListTableViewCell")
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let books = presenter.iBooks  else {
+            return 0
+        }
+        return books.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: BookListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.selectionStyle = .none
+        guard let iBook = presenter.iBooks?[indexPath.row] else {
+            return cell
+        }
+        cell.setupCell(with: iBook)
+        return cell
+    }
+    
+    
 }
 

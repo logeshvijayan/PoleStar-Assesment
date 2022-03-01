@@ -13,7 +13,7 @@ class ViewController: UIViewController,IBookViewProtocol {
     
     var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol = IBookPresenter()
     
-    func showListofAudioBooks() {
+    func showListofIBooks() {
         preRequisiteStackView.isHidden = true
         listTableView.reloadData()
     }

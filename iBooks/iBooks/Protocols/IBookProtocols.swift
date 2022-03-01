@@ -11,7 +11,7 @@ protocol IBookViewProtocol: AnyObject {
     
     // PRESENTER -> VIEW
     var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol {get set}
-    func showListofAudioBooks()
+    func showListofIBooks()
 }
 
 protocol IBookPresenterProtocol: AnyObject {
@@ -20,11 +20,11 @@ protocol IBookPresenterProtocol: AnyObject {
     var interactor: IBookInputInteractorProtocol? {get set}
     var view: IBookViewProtocol? {get set}
     var router:IBookRouterProtocol? {get set}
-    var audioBooks: [iBook]? {get set}
+    var iBooks: [iBook]? {get set}
     var filteredBooks: [iBook]? {get set}
     
     func viewDidLoad()
-    func searchForAudioBook(with term: String)
+    func searchForIBook(with term: String)
     func configureView(viewRef: ViewController)
 
 }
@@ -40,7 +40,7 @@ protocol IBookInputInteractorProtocol: AnyObject {
 protocol IBookOutputInteractorProtocol: AnyObject {
     
     //Interactor -> Presenter
-    func IBookListDidFetch(AudioBookList: [iBook])
+    func IBookListDidFetch(iBookList: [iBook])
 }
 
 protocol IBookRouterProtocol: AnyObject {

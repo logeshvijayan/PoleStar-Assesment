@@ -14,7 +14,7 @@ class IBookPresenter: IBookPresenterProtocol {
     var interactor: IBookInputInteractorProtocol?
     weak var view: IBookViewProtocol?
     var router: IBookRouterProtocol?
-    var audioBooks: [iBook]?
+    var iBooks: [iBook]?
     var filteredBooks: [iBook]?
     
     //MARK: - Presenter Functions
@@ -22,7 +22,7 @@ class IBookPresenter: IBookPresenterProtocol {
         // Do Nothing
     }
     
-    func searchForAudioBook(with term: String) {
+    func searchForIBook(with term: String) {
         // Communicate with Interactor to get the data
     }
     
@@ -41,7 +41,7 @@ class IBookPresenter: IBookPresenterProtocol {
 //MARK: - Extension
 extension IBookPresenter: IBookOutputInteractorProtocol {
     
-    func IBookListDidFetch(AudioBookList: [iBook]) {
+    func IBookListDidFetch(iBookList: [iBook]) {
         /// Fetch Function
     }
     

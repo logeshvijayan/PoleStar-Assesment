@@ -26,6 +26,9 @@
 		43D4BDB527CDBF3800834B0C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB427CDBF3800834B0C /* Bundle+Extension.swift */; };
 		43D4BDB727CDC6F500834B0C /* iBookAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB627CDC6F400834B0C /* iBookAPIError.swift */; };
 		43D4BDB927CDC75700834B0C /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDB827CDC75700834B0C /* Error+Extension.swift */; };
+		43D4BDC027CE05FC00834B0C /* IBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDBF27CE05FC00834B0C /* IBookPresenter.swift */; };
+		43D4BDC227CE060E00834B0C /* IBookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDC127CE060E00834B0C /* IBookInteractor.swift */; };
+		43D4BDC527CE064500834B0C /* IBookProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BDC427CE064500834B0C /* IBookProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		43D4BDB427CDBF3800834B0C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		43D4BDB627CDC6F400834B0C /* iBookAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBookAPIError.swift; sourceTree = "<group>"; };
 		43D4BDB827CDC75700834B0C /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
+		43D4BDBF27CE05FC00834B0C /* IBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBookPresenter.swift; sourceTree = "<group>"; };
+		43D4BDC127CE060E00834B0C /* IBookInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBookInteractor.swift; sourceTree = "<group>"; };
+		43D4BDC427CE064500834B0C /* IBookProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBookProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +125,12 @@
 		43D4BD6F27CCF56700834B0C /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
-				43D4BDAF27CD4FB100834B0C /* Entity */,
 				43D4BDA327CCFCBB00834B0C /* View */,
+				43D4BDBC27CE057F00834B0C /* Interactor */,
+				43D4BDBA27CE056C00834B0C /* Presenter */,
+				43D4BDAF27CD4FB100834B0C /* Entity */,
+				43D4BDBE27CE059000834B0C /* Router */,
+				43D4BDC327CE062100834B0C /* Protocols */,
 				43D4BD7027CCF56700834B0C /* AppDelegate.swift */,
 				43D4BD7227CCF56700834B0C /* SceneDelegate.swift */,
 				43D4BD7C27CCF56900834B0C /* Assets.xcassets */,
@@ -195,6 +205,37 @@
 				43D4BDB227CDBE1A00834B0C /* iBookEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		43D4BDBA27CE056C00834B0C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDBF27CE05FC00834B0C /* IBookPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		43D4BDBC27CE057F00834B0C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDC127CE060E00834B0C /* IBookInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		43D4BDBE27CE059000834B0C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		43D4BDC327CE062100834B0C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				43D4BDC427CE064500834B0C /* IBookProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,12 +376,15 @@
 				43D4BD7B27CCF56700834B0C /* iBooks.xcdatamodeld in Sources */,
 				43D4BDAE27CD4D5F00834B0C /* iBooksAPI.swift in Sources */,
 				43D4BDB327CDBE1A00834B0C /* iBookEntity.swift in Sources */,
+				43D4BDC527CE064500834B0C /* IBookProtocols.swift in Sources */,
 				43D4BDA927CD117F00834B0C /* PreRequisites.swift in Sources */,
 				43D4BDB727CDC6F500834B0C /* iBookAPIError.swift in Sources */,
 				43D4BDA627CD0E1800834B0C /* UILabel+ Extension.swift in Sources */,
 				43D4BD7327CCF56700834B0C /* SceneDelegate.swift in Sources */,
 				43D4BDB927CDC75700834B0C /* Error+Extension.swift in Sources */,
+				43D4BDC227CE060E00834B0C /* IBookInteractor.swift in Sources */,
 				43D4BDAB27CD1E7800834B0C /* NetworkMonitor.swift in Sources */,
+				43D4BDC027CE05FC00834B0C /* IBookPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

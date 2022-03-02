@@ -8,34 +8,47 @@
 import UIKit
 import Combine
 
+//MARK: - Class
 class IBookInteractor: IBookInputInteractorProtocol {
 
-    weak var presenter: IBookOutputInteractorProtocol?
-    
     //MARK: - Combine variables
     private let baseService = iBooksAPI()
     private var bag = Set<AnyCancellable>()
-
-func fetchSpecificiBookStarts(with term: String) {
     
-    baseService.search(term: term)
-        .sink(receiveCompletion: {  completion in
-            switch completion {
-            case .finished:
-               print("Finished Sucessfully")
-            case .failure(let error):
-               print("Finished with errors",error)
-           
+    weak var presenter: IBookOutputInteractorProtocol?
+
+    //MARK: - Interactor Functions
+    
+    /// This function interacts with network layer to get data from the server
+    func fetchSpecificiBookStarts(with term: String) {
+        
+        baseService.search(term: term)
+            .sink(receiveCompletion: {  completion in
+                switch completion {
+                case .finished:
+                    print("Finished Sucessfully")
+                case .failure(_):
+                    self.showAlert(with: .technicalError)
+                }}) { ibooks in
+                if ibooks.isEmpty {
+                    self.showAlert(with: .noDocumentsFound)
+                } else {
+                    self.IBookListDidFetch(iBookList: ibooks)
+                }
             }
-        }) { ibooks in
-            self.IBookListDidFetch(iBookList: ibooks)
-        }
-        .store(in: &bag)
-}
+            .store(in: &bag)
+    }
     
 }
 
+//MARK: - Output Interactor function
+
+///This function communicates back to the presenter about the acquired output
 extension IBookInteractor: IBookOutputInteractorProtocol {
+    func showAlert(with action: AlertAction) {
+        presenter?.showAlert(with: action)
+    }
+    
     func IBookListDidFetch(iBookList: [iBook]) {
         presenter?.IBookListDidFetch(iBookList: iBookList)
     }

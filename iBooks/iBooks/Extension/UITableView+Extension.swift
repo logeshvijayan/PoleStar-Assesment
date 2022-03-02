@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK:  Dequeue reusable function
 extension UITableView {
 
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {

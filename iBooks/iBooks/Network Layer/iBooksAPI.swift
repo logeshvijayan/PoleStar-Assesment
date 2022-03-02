@@ -78,6 +78,7 @@ class iBooksAPI {
             .map(\.data)
             .decode(type: iBooksAPIResponse.self, decoder: decoder)
             .map(\.docs)
+            .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
 

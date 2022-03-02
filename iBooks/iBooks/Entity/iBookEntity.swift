@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-//MARK: - Model to decode API data
+//MARK: - Model to hold iBook data
 struct iBook: Codable {
     let key: String
     let type: String
@@ -26,6 +26,7 @@ struct iBook: Codable {
     }
 }
 
+//MARK: - Model to parse the actual JSON
 struct iBooksAPIResponse: Codable {
     let numFound: Int
     let start: Int

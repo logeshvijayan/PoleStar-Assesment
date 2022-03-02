@@ -7,16 +7,17 @@
 
 import UIKit
 
+/// Presenter  ->  View
 protocol IBookViewProtocol: AnyObject {
-    
-    // PRESENTER -> VIEW
     var presenter: IBookPresenterProtocol & IBookOutputInteractorProtocol {get set}
     func showListofIBooks()
+    func showAlert(for action: AlertAction)
+    
 }
 
+/// View -> Presenter
 protocol IBookPresenterProtocol: AnyObject {
     
-    //View -> Presenter
     var interactor: IBookInputInteractorProtocol? {get set}
     var view: IBookViewProtocol? {get set}
     var router:IBookRouterProtocol? {get set}
@@ -29,18 +30,16 @@ protocol IBookPresenterProtocol: AnyObject {
 
 }
 
+/// Presenter -> Interactor
 protocol IBookInputInteractorProtocol: AnyObject {
-    
-    //Presenter -> Interactor
     var presenter: IBookOutputInteractorProtocol? {get set}
-
     func fetchSpecificiBookStarts(with term: String)
 }
 
+/// Interactor -> Presenter
 protocol IBookOutputInteractorProtocol: AnyObject {
-    
-    //Interactor -> Presenter
     func IBookListDidFetch(iBookList: [iBook])
+    func showAlert(with action: AlertAction)
 }
 
 protocol IBookRouterProtocol: AnyObject {
